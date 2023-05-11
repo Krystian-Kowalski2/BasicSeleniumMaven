@@ -4,23 +4,20 @@ import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utils.WaitUtils;
+import org.openqa.selenium.support.FindBys;
 
-public class PrimaryLinksPage {
-    public WaitUtils waitUtils;
+@Getter
+public class PrimaryLinksPage extends BasePageObject {
 
     public PrimaryLinksPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        waitUtils = new WaitUtils(driver);
+        super(driver);
     }
 
-    public void goToEnglishVersion() {
-        getEnglishVersion().click();
-        waitUtils.waitForUrlToContain("en.wikipedia");
+    public void goAddRemoveElements() {
+        getAddRemoveLink().click();
+        waitUtils.waitForUrlToContain("add_remove_elements");
     }
 
-    @Getter
-    @FindBy(id = "js-link-box-en")
-    private WebElement englishVersion;
+    @FindBy(css = "a[href='/add_remove_elements/']")
+    private WebElement addRemoveLink;
 }
