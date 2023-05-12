@@ -17,13 +17,6 @@ public class ElementsTests extends TestBase {
     @Test
     public void addRemoveTest() {
         primaryLinksPage.goAddRemoveElements();
-        addRemoveElementsPage.addElement();
-        addRemoveElementsPage.addElement();
-        addRemoveElementsPage.countAddedElements(2);
-        addRemoveElementsPage.deleteElement();
-        addRemoveElementsPage.countAddedElements(1);
-        addRemoveElementsPage.deleteElement();
-        addRemoveElementsPage.countAddedElements(0);
-        addRemoveElementsPage.deleteElement();
-        addRemoveElementsPage.countAddedElements(0);    }
+        addRemoveElementsPage.countAddedElements();
+    }
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Timestamp;
 import java.time.Duration;
+import java.util.List;
 import java.util.Optional;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
@@ -103,6 +104,11 @@ public class WaitUtils {
     public void waitForVisibilityOf(WebElement element, int maxTimeInSeconds) {
         new WebDriverWait(driver, Duration.ofSeconds(maxTimeInSeconds))
                 .until(visibilityOf(element));
+    }
+
+    public void waitForVisibilityOfElements(List<WebElement> element) {
+        new WebDriverWait(driver, Duration.ofSeconds(defaultMaxTimeoutForAllWaits))
+                .until(visibilityOfAllElements(element));
     }
 
     public WebElement waitForElement(WebElement element) {
