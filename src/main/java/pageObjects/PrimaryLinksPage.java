@@ -12,19 +12,36 @@ public class PrimaryLinksPage extends BasePageObject {
         super(driver);
     }
 
+    private void goToPage(WebElement element, String url) {
+        element.click();
+        waitUtils.waitForUrlToContain(url);
+    }
+
     public void goAddRemoveElements() {
-        getAddRemoveLinkPage().click();
-        waitUtils.waitForUrlToContain("add_remove_elements");
+        goToPage(getAddRemovePage(), "add_remove_elements");
     }
 
     public void goToDisappearingElementsPage() {
-        getDisappearingElementsPage().click();
-        waitUtils.waitForUrlToContain("disappearing_elements");
+        goToPage(getDisappearingElementsPage(), "disappearing_elements");
+    }
+
+    public void goToFormAuthenticationPage() {
+        goToPage(getFormAuthenticationPage(), "login");
+    }
+
+    public void goToBasicAuthPage(){
+        goToPage(getBasicAuthPage(), "basic_auth");
     }
 
     @FindBy(css = "a[href='/add_remove_elements/']")
-    private WebElement addRemoveLinkPage;
+    private WebElement addRemovePage;
 
     @FindBy(css = "a[href='/disappearing_elements']")
     private WebElement disappearingElementsPage;
+
+    @FindBy(css = "a[href='/basic_auth']")
+    private WebElement basicAuthPage;
+
+    @FindBy(css = "a[href='/login']")
+    private WebElement formAuthenticationPage;
 }

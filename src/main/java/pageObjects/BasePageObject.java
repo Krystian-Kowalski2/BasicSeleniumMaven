@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.WaitUtils;
 
-
 public class BasePageObject {
     public WaitUtils waitUtils;
 
