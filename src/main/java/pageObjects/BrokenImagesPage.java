@@ -20,9 +20,7 @@ public class BrokenImagesPage extends BasePageObject {
     }
 
     private List<WebElement> collectImages() {
-        List<WebElement> imageElements = new ArrayList<>();
-        imageElements.addAll(images);
-        return imageElements;
+        return new ArrayList<>(images);
     }
 
     private boolean isValidStatusCode(int statusCode) {
