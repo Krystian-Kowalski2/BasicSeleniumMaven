@@ -33,6 +33,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getBasicAuthPage(), "basic_auth");
     }
 
+    public void goToHoversPage(){
+        goToPage(getHoversPage(), "hovers");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -44,4 +48,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/login']")
     private WebElement formAuthenticationPage;
+
+    @FindBy(css = "a[href='/hovers']")
+    private WebElement hoversPage;
 }
