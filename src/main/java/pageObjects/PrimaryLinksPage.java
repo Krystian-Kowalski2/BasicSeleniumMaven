@@ -41,6 +41,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getBrokenImagesPage(), "/broken_images");
     }
 
+    public void goToCheckboxesPage() {
+        goToPage(getCheckboxesPage(), "/checkboxes");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -58,4 +62,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/broken_images']")
     private WebElement brokenImagesPage;
+
+    @FindBy(css = "a[href='/checkboxes']")
+    private WebElement checkboxesPage;
 }
