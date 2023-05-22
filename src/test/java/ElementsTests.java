@@ -1,16 +1,14 @@
 import config.TestBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageObjects.AddRemoveElementsPage;
-import pageObjects.CheckboxesPage;
-import pageObjects.DisappearingElementsPage;
-import pageObjects.PrimaryLinksPage;
+import pageObjects.*;
 
 public class ElementsTests extends TestBase {
     public PrimaryLinksPage primaryLinksPage;
     public AddRemoveElementsPage addRemoveElementsPage;
     public DisappearingElementsPage disappearingElementsPage;
     public CheckboxesPage checkboxesPage;
+    public DragAndDropPage dragAndDropPage;
 
     @BeforeMethod(alwaysRun = true)
     private void initOperations() {
@@ -18,6 +16,7 @@ public class ElementsTests extends TestBase {
         addRemoveElementsPage = new AddRemoveElementsPage(driver);
         disappearingElementsPage = new DisappearingElementsPage(driver);
         checkboxesPage = new CheckboxesPage(driver);
+        dragAndDropPage = new DragAndDropPage(driver);
     }
 
     @Test
@@ -48,5 +47,11 @@ public class ElementsTests extends TestBase {
         primaryLinksPage.goToCheckboxesPage();
         checkboxesPage.uncheckFirstCheckbox();
         checkboxesPage.uncheckSecondCheckbox();
+    }
+
+    @Test
+    public void switchColumnsByDraggingTest() {
+        primaryLinksPage.goDragAndDropPage();
+        dragAndDropPage.switchColumnAWithB();
     }
 }

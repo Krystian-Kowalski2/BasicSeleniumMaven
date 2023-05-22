@@ -45,6 +45,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getCheckboxesPage(), "/checkboxes");
     }
 
+    public void goDragAndDropPage() {
+        goToPage(getDragAngDropPage(), "/drag_and_drop");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -65,4 +69,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/checkboxes']")
     private WebElement checkboxesPage;
+
+    @FindBy(css = "a[href='/drag_and_drop']")
+    private WebElement dragAngDropPage;
 }
