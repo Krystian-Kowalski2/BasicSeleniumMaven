@@ -10,6 +10,7 @@ public class ElementsTests extends TestBase {
     public CheckboxesPage checkboxesPage;
     public DragAndDropPage dragAndDropPage;
     public ContextMenuPage contextMenuPage;
+    public DropdownPage dropdownPage;
 
     @BeforeMethod(alwaysRun = true)
     private void initOperations() {
@@ -19,6 +20,7 @@ public class ElementsTests extends TestBase {
         checkboxesPage = new CheckboxesPage(driver);
         dragAndDropPage = new DragAndDropPage(driver);
         contextMenuPage = new ContextMenuPage(driver);
+        dropdownPage = new DropdownPage(driver);
     }
 
     @Test
@@ -62,5 +64,11 @@ public class ElementsTests extends TestBase {
         primaryLinksPage.goToContextMenuPage();
         contextMenuPage.openHotSpot();
         contextMenuPage.checkAlertText();
+    }
+
+    @Test
+    public void dropdownTest() {
+        primaryLinksPage.goToDropdownPage();
+        dropdownPage.chooseFromDropdown();
     }
 }

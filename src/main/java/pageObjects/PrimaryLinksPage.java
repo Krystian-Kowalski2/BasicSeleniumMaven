@@ -53,6 +53,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getContextMenuPage(), "/context_menu");
     }
 
+    public void goToDropdownPage() {
+        goToPage(getDropdownPage(),"/dropdown");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -79,4 +83,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/context_menu']")
     private WebElement contextMenuPage;
+
+    @FindBy(css = "a[href='/dropdown']")
+    private WebElement dropdownPage;
 }
