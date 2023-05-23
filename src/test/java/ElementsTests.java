@@ -9,6 +9,7 @@ public class ElementsTests extends TestBase {
     public DisappearingElementsPage disappearingElementsPage;
     public CheckboxesPage checkboxesPage;
     public DragAndDropPage dragAndDropPage;
+    public ContextMenuPage contextMenuPage;
 
     @BeforeMethod(alwaysRun = true)
     private void initOperations() {
@@ -17,6 +18,7 @@ public class ElementsTests extends TestBase {
         disappearingElementsPage = new DisappearingElementsPage(driver);
         checkboxesPage = new CheckboxesPage(driver);
         dragAndDropPage = new DragAndDropPage(driver);
+        contextMenuPage = new ContextMenuPage(driver);
     }
 
     @Test
@@ -53,5 +55,12 @@ public class ElementsTests extends TestBase {
     public void switchColumnsByDraggingTest() {
         primaryLinksPage.goDragAndDropPage();
         dragAndDropPage.switchColumnAWithB();
+    }
+
+    @Test
+    public void getTextFromAlertTest() {
+        primaryLinksPage.goToContextMenuPage();
+        contextMenuPage.openHotSpot();
+        contextMenuPage.checkAlertText();
     }
 }

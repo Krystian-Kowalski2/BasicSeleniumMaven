@@ -49,6 +49,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getDragAngDropPage(), "/drag_and_drop");
     }
 
+    public void goToContextMenuPage() {
+        goToPage(getContextMenuPage(), "/context_menu");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -72,4 +76,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/drag_and_drop']")
     private WebElement dragAngDropPage;
+
+    @FindBy(css = "a[href='/context_menu']")
+    private WebElement contextMenuPage;
 }
