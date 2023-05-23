@@ -57,6 +57,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getDropdownPage(),"/dropdown");
     }
 
+    public void goToDynamicControlsPage() {
+        goToPage(getDynamicControlsPage(),"/dynamic_controls");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -86,4 +90,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/dropdown']")
     private WebElement dropdownPage;
+
+    @FindBy(css = "a[href='/dynamic_controls']")
+    private WebElement dynamicControlsPage;
 }

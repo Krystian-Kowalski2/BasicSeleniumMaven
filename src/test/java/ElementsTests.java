@@ -11,6 +11,7 @@ public class ElementsTests extends TestBase {
     public DragAndDropPage dragAndDropPage;
     public ContextMenuPage contextMenuPage;
     public DropdownPage dropdownPage;
+    public DynamicControlsPage dynamicControlsPage;
 
     @BeforeMethod(alwaysRun = true)
     private void initOperations() {
@@ -21,6 +22,7 @@ public class ElementsTests extends TestBase {
         dragAndDropPage = new DragAndDropPage(driver);
         contextMenuPage = new ContextMenuPage(driver);
         dropdownPage = new DropdownPage(driver);
+        dynamicControlsPage = new DynamicControlsPage(driver);
     }
 
     @Test
@@ -70,5 +72,12 @@ public class ElementsTests extends TestBase {
     public void dropdownTest() {
         primaryLinksPage.goToDropdownPage();
         dropdownPage.chooseFromDropdown();
+    }
+
+    @Test
+    public void dynamicElementsTest() {
+        primaryLinksPage.goToDynamicControlsPage();
+        dynamicControlsPage.checkCheckboxSwitch();
+        dynamicControlsPage.checkTextFieldSwitch();
     }
 }
