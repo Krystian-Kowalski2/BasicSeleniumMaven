@@ -61,6 +61,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getDynamicControlsPage(),"/dynamic_controls");
     }
 
+    public void goToHorizontalSliderPage() {
+        goToPage(getHorizontalSlider(),"/horizontal_slider");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -93,4 +97,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/dynamic_controls']")
     private WebElement dynamicControlsPage;
+
+    @FindBy(css = "a[href='/horizontal_slider']")
+    private WebElement horizontalSlider;
 }

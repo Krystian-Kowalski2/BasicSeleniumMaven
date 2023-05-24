@@ -12,6 +12,7 @@ public class ElementsTests extends TestBase {
     public ContextMenuPage contextMenuPage;
     public DropdownPage dropdownPage;
     public DynamicControlsPage dynamicControlsPage;
+    public HorizontalSliderPage horizontalSliderPage;
 
     @BeforeMethod(alwaysRun = true)
     private void initOperations() {
@@ -23,6 +24,7 @@ public class ElementsTests extends TestBase {
         contextMenuPage = new ContextMenuPage(driver);
         dropdownPage = new DropdownPage(driver);
         dynamicControlsPage = new DynamicControlsPage(driver);
+        horizontalSliderPage = new HorizontalSliderPage(driver);
     }
 
     @Test
@@ -79,5 +81,12 @@ public class ElementsTests extends TestBase {
         primaryLinksPage.goToDynamicControlsPage();
         dynamicControlsPage.checkCheckboxSwitch();
         dynamicControlsPage.checkTextFieldSwitch();
+    }
+
+    @Test
+    public void sliderTest() {
+        primaryLinksPage.goToHorizontalSliderPage();
+        horizontalSliderPage.moveSlider();
+        horizontalSliderPage.readSliderValue();
     }
 }
