@@ -65,6 +65,8 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getHorizontalSlider(),"/horizontal_slider");
     }
 
+    public void goToJQueryMenuPage() {goToPage(getJQueryMenuPage(), "/jqueryui/menu");}
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -100,4 +102,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/horizontal_slider']")
     private WebElement horizontalSlider;
+
+    @FindBy(css = "a[href='/jqueryui/menu']")
+    private WebElement jQueryMenuPage;
 }
