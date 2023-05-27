@@ -26,6 +26,14 @@ public class JQueryMenuPage extends BasePageObject {
         hoverAndClick(getPdfFileMenuItem());
     }
 
+    public void verifyBackToJQueryLinks() throws InterruptedException {
+        hoverAndClick(getEnabledMenuItem());
+        hoverAndClick(getBackToJQueryPageLink());
+        waitUtils.waitForVisibilityOf(getBackToJQueryMenuPageLink());
+        getBackToJQueryMenuPageLink().click();
+        waitUtils.waitForUrlToContain("menu");
+    }
+
     @FindBy(id = "ui-id-3")
     private WebElement enabledMenuItem;
 
@@ -34,4 +42,10 @@ public class JQueryMenuPage extends BasePageObject {
 
     @FindBy(id = "ui-id-5")
     private WebElement pdfFileMenuItem;
+
+    @FindBy(id = "ui-id-8")
+    private WebElement backToJQueryPageLink;
+
+    @FindBy(xpath = "//*[contains(text(),'Menu')]")
+    private WebElement backToJQueryMenuPageLink;
 }
