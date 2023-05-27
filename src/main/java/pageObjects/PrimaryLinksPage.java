@@ -67,6 +67,10 @@ public class PrimaryLinksPage extends BasePageObject {
 
     public void goToJQueryMenuPage() {goToPage(getJQueryMenuPage(), "/jqueryui/menu");}
 
+    public void goToFramesPage() {
+        goToPage(getFramesPage(),"/frames");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -105,4 +109,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/jqueryui/menu']")
     private WebElement jQueryMenuPage;
+
+    @FindBy(css = "a[href='/frames']")
+    private WebElement framesPage;
 }
