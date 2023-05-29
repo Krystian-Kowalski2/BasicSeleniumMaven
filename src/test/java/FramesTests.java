@@ -20,4 +20,12 @@ public class FramesTests extends TestBase {
         framesPage.clickNestedFramesLink();
         framesPage.switchToMiddleFrame();
     }
+
+    @Test
+    public void iFrameElementsInteraction() {
+        primaryLinksPage.goToFramesPage();
+        framesPage.clickIFrameLink();
+        framesPage.makeTextBold();
+        framesPage.switchToTextFieldFrame();
+    }
 }

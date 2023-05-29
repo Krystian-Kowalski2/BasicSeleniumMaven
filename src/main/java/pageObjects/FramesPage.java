@@ -27,6 +27,17 @@ public class FramesPage extends BasePageObject {
         getIFrameLink().click();
     }
 
+    public void makeTextBold() {
+        getBoldButton().click();
+    }
+
+    public void switchToTextFieldFrame() {
+        driver.switchTo().frame(getTextFieldFrame());
+        getTextField().clear();
+        getTextField().sendKeys("testing");
+        assertTrue(getTextField().getText().contains("testing"));
+    }
+
     @FindBy(css = "a[href='/nested_frames']")
     private WebElement nestedFramesLink;
 
@@ -41,4 +52,13 @@ public class FramesPage extends BasePageObject {
 
     @FindBy(id = "content")
     private WebElement frameContent;
+
+    @FindBy(css = "button[title='Bold']")
+    private WebElement boldButton;
+
+    @FindBy(id = "mce_0_ifr")
+    private WebElement textFieldFrame;
+
+    @FindBy(id = "tinymce")
+    private WebElement textField;
 }
