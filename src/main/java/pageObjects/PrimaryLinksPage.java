@@ -54,21 +54,27 @@ public class PrimaryLinksPage extends BasePageObject {
     }
 
     public void goToDropdownPage() {
-        goToPage(getDropdownPage(),"/dropdown");
+        goToPage(getDropdownPage(), "/dropdown");
     }
 
     public void goToDynamicControlsPage() {
-        goToPage(getDynamicControlsPage(),"/dynamic_controls");
+        goToPage(getDynamicControlsPage(), "/dynamic_controls");
     }
 
     public void goToHorizontalSliderPage() {
-        goToPage(getHorizontalSlider(),"/horizontal_slider");
+        goToPage(getHorizontalSlider(), "/horizontal_slider");
     }
 
-    public void goToJQueryMenuPage() {goToPage(getJQueryMenuPage(), "/jqueryui/menu");}
+    public void goToJQueryMenuPage() {
+        goToPage(getJQueryMenuPage(), "/jqueryui/menu");
+    }
 
     public void goToFramesPage() {
-        goToPage(getFramesPage(),"/frames");
+        goToPage(getFramesPage(), "/frames");
+    }
+
+    public void goToWindowsPage() {
+        goToPage(getNewWindowPage(), "windows");
     }
 
     @FindBy(css = "a[href='/add_remove_elements/']")
@@ -112,4 +118,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/frames']")
     private WebElement framesPage;
+
+    @FindBy(css = "a[href='/windows']")
+    private WebElement newWindowPage;
 }
