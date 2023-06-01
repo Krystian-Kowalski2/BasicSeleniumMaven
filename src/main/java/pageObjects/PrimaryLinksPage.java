@@ -77,6 +77,10 @@ public class PrimaryLinksPage extends BasePageObject {
         goToPage(getNewWindowPage(), "windows");
     }
 
+    public void goToTablesPage() {
+        goToPage(getTablesPage(), "tables");
+    }
+
     @FindBy(css = "a[href='/add_remove_elements/']")
     private WebElement addRemovePage;
 
@@ -121,4 +125,7 @@ public class PrimaryLinksPage extends BasePageObject {
 
     @FindBy(css = "a[href='/windows']")
     private WebElement newWindowPage;
+
+    @FindBy(css = "a[href='/tables']")
+    private WebElement tablesPage;
 }
