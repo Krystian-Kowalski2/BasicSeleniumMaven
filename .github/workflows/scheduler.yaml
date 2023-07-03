@@ -1,0 +1,11 @@
+name: Scheduler
+'on':
+  schedule:
+    - cron: 0 0 * * *
+test:
+  suites:
+    - testing.xml
+  output-directory: test-output
+  parallel: false
+java:
+  version: 11
