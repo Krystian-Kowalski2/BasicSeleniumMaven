@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression" parallel="false">
+    <listeners>
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+    </listeners>
+
+    <test name="regression">
+        <parameter name="browser" value="edge" />
+        <classes>
+            <class name="AuthorisationTests"/>
+            <class name="ElementsTests"/>
+            <class name="FramesTests"/>
+            <class name="ImageTests"/>
+            <class name="JQueryUITests"/>
+            <class name="NewTabTests"/>
+        </classes>
+    </test>
+</suite>
