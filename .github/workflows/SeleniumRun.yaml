@@ -1,6 +1,9 @@
 name: Run Selenium Tests
 
-on: [push, pull_request, worklow_dispatch]
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
