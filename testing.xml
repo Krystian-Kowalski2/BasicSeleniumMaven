@@ -3,6 +3,7 @@
 <suite name="Regression" parallel="false">
     <listeners>
         <listener class-name="org.testng.reporters.XMLReporter"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
 
     <test name="regression">
