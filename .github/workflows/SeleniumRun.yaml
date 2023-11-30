@@ -1,9 +1,12 @@
 name: Run Selenium Tests
 
 on: 
-  push:
-  pull_request:
   workflow_dispatch:
+    inputs:
+      testFile:
+        description: 'TestNG XML file to run'
+        required: true
+        default: 'testing.xml'
 
 jobs:
   build:
@@ -21,4 +24,4 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Run Selenium tests
-      run: mvn test -DsuiteXmlFile=testing.xml
+      run: mvn test -DsuiteXmlFile=${{ github.event.inputs.testFile }}
