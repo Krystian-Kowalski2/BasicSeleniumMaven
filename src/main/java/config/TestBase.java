@@ -7,8 +7,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class TestBase {
     public static String BASE_URL = "https://the-internet.herokuapp.com/";
     public static WebDriver driver;
@@ -16,11 +14,7 @@ public class TestBase {
     @BeforeGroups
     public WebDriver setDriver() {
         // Set up the WebDriverManager for chrome driver
-        WebDriverManager.chromedriver().setup();
-
-        // Create the driver object
-        driver = new ChromeDriver();
-        return driver;
+        return new ChromeDriver();
     }
 
     @BeforeMethod(alwaysRun = true)
