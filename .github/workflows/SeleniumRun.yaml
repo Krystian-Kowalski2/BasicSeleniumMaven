@@ -32,7 +32,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Run Selenium tests
-      run: mvn test -DsuiteXmlFile=${{ github.event.inputs.testFile }}
+      run: mvn -B clean test -f pom.xml -DsuiteXmlFile=${{ github.event.inputs.testFile }} -Dtest.group=${{ github.event.inputs.testFile }}
 
 
   generate-reports:
