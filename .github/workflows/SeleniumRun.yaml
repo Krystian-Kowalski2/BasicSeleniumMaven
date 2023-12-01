@@ -1,6 +1,8 @@
 name: Run Selenium Tests
 
 on: 
+  schedule:
+    - cron: '0 0 * * 1-5'
   workflow_dispatch:
     inputs:
       testFile:
