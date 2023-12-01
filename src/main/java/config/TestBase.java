@@ -3,15 +3,23 @@ package config;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
     public static String BASE_URL = "https://the-internet.herokuapp.com/";
     public static WebDriver driver;
 
+    @BeforeGroups
     public WebDriver setDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        // Set up the WebDriverManager for chrome driver
+        WebDriverManager.chromedriver().setup();
+
+        // Create the driver object
+        driver = new ChromeDriver();
         return driver;
     }
 
@@ -24,8 +32,9 @@ public class TestBase {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-        driver.manage().deleteAllCookies();
-        driver.close();
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 }
